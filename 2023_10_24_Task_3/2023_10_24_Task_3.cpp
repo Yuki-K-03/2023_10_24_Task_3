@@ -1,7 +1,11 @@
+﻿<<<<<<<<< Temporary merge branch 1
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+=========
+﻿#include <iostream>
+>>>>>>>>> Temporary merge branch 2
 #include "HeroEnemy.h"
 using namespace std;
 
