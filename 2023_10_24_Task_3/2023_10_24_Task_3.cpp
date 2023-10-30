@@ -5,7 +5,6 @@ using namespace std;
 const int MAX_NAME = 16;
 
 void showStatus(Hero hero, Enemy enemy) {
-
     printf("\nステータス表示\n");
     printf("Hero\n");
     //printf("名前：%s\n", );
