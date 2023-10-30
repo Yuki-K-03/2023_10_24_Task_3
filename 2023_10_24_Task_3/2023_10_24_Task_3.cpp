@@ -1,4 +1,7 @@
-﻿#include <iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
 #include "HeroEnemy.h"
 using namespace std;
 
@@ -13,7 +16,9 @@ void showStatus(Hero hero, Enemy enemy) {
     printf("攻撃力：%d, ", hero.getAttack());
     printf("防御力：%d\n", hero.getDiffence());
 
-    printf("Enemy\n");
+
+    printf("\nステータス表示\n");
+    printf("Hero\n");
     //printf("名前：%s\n", );
     printf("体力：%d\n", enemy.getHp());
     printf("攻撃力：%d, ", enemy.getAttack());
@@ -41,8 +46,6 @@ int main()
     printf("HPを入力\n> ");
     cin >> hp;
 
-
-
     Enemy enemy(&name[0], hp);
 
     // ステータス表示
@@ -53,6 +56,7 @@ int main()
     hero2 = hero;
     Enemy enemy2(&name2[0], 10);
     enemy2 = enemy;
+
     showStatus(hero2, enemy2);
 
     int select = 0;

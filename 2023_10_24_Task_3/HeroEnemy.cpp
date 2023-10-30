@@ -2,10 +2,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <algorithm>
 #include "HeroEnemy.h"
 using namespace std;
-
-const int MAX_NAME = 16;
 
 void Hero::operator = (const Hero& other) {
     char* __pName = new char[other._nameSize + 1];
@@ -23,7 +22,7 @@ void Hero::operator = (const Hero& other) {
 Hero::Hero(char* pName, int hp) {
     // 名前をコピー
     _nameSize = strlen(pName);
-    _pName = new char[_nameSize + 1];   // +1は\0分
+    _pName = new char[_nameSize + 1];
     strcpy(_pName, pName);
 
     // 他のパラメータ初期化
