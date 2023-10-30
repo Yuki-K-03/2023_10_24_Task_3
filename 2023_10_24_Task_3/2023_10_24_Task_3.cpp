@@ -15,7 +15,7 @@ void showStatus(Hero hero, Enemy enemy) {
 
 
     printf("\nステータス表示\n");
-    printf("Hero\n");
+    printf("Enemy\n");
     //printf("名前：%s\n", );
     printf("体力：%d\n", enemy.getHp());
     printf("攻撃力：%d, ", enemy.getAttack());
