@@ -1,7 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstdlib>
-#include <cstring>
+﻿#include <iostream>
 #include "HeroEnemy.h"
 using namespace std;
 
