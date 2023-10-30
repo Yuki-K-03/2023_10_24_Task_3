@@ -1,4 +1,7 @@
-﻿#include <iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
 #include "HeroEnemy.h"
 using namespace std;
 
@@ -13,16 +16,53 @@ void showStatus(Hero hero, Enemy enemy) {
     printf("攻撃力：%d, ", hero.getAttack());
     printf("防御力：%d\n", hero.getDiffence());
 
-    printf("Enemy\n");
-    //printf("名前：%s\n", );
-    printf("体力：%d\n", enemy.getHp());
-    printf("攻撃力：%d, ", enemy.getAttack());
-    printf("防御力：%d\n", enemy.getDiffence());
+}
+
+void Hero::attack(Enemy* enemy) {
+    int deffence = enemy->getDiffence();
+    int damage = 0;
+    damage = _attack - deffence;
+    printf("%sの攻撃！\n%dのダメージを与えた\n", _pName, damage);
+
+    int hp = enemy->getHp();
+    enemy->setHp(hp - damage);
+    printf("相手の残りHP : %d\n", enemy->getHp());
+}
+
+void Enemy::attack(Hero* hero) {
+    int deffence = hero->getDiffence();
+    int damage = 0;
+    damage = _attack - deffence;
+    printf("%sの攻撃！\n%dのダメージを与えた\n", _pName, damage);
+
+    int hp = hero->getHp();
+    hero->setHp(hp - damage);
+    printf("相手の残りHP : %d\n", hero->getHp());
+}
+
+void Hero::heal() {
+    int healHp = 0;
+    printf("どのくらい回復しますか\n> ");
+    cin >> healHp;
+    _hp += healHp;
+
+    printf("%sの残りHP : %d\n", _pName, _hp);
+}
+
+void Enemy::heal() {
+    int healHp = 0;
+    printf("どのくらい回復しますか\n> ");
+    cin >> healHp;
+    _hp += healHp;
+
+    printf("%sの残りHP : %d\n", _pName, _hp);
 }
 
 int main()
 {
     bool turn = false;
+    //Hero hero = InputHeroStatus();
+    //Enemy enemy = InputEnemyStatus();
     char name[MAX_NAME]{ "" };
     int hp = 0;
 
