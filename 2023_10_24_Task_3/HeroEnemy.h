@@ -42,8 +42,6 @@ public:
     Enemy(char* pName, int hp);
     ~Enemy();
 
-    void operator*(const int i);
-
 public:
     int getAttack() { return _attack; }
     int getDiffence() { return _diffence; }
