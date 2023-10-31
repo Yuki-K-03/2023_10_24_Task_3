@@ -12,6 +12,7 @@ public:
     ~Hero();
 
 public:
+    char* getName() { return _pName; }
     int getAttack() { return _attack; }
     int getDiffence() { return _diffence; }
     int getHp() { return _hp; }
@@ -42,9 +43,8 @@ public:
     Enemy(char* pName, int hp);
     ~Enemy();
 
-    void operator*(const int i);
-
 public:
+    char* getName() { return _pName; }
     int getAttack() { return _attack; }
     int getDiffence() { return _diffence; }
     int getHp() { return _hp; }

@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <cstdlib>
-#include <cstring>
-#include <algorithm>
+//#include <cstdlib>
+//#include <cstring>
+//#include <algorithm>
 #include "HeroEnemy.h"
 using namespace std;
 
@@ -12,10 +12,12 @@ void Hero::operator = (const Hero& other) {
     delete[] _pName;
     _pName = __pName;
     _nameSize = other._nameSize;
-    copy(other._pName, other._pName + _nameSize, _pName);
     _hp = other._hp;
     _attack = other._attack;
     _diffence = other._diffence;
+    _pName[_nameSize] = NULL;
+
+    copy(other._pName, other._pName + _nameSize, _pName);
 }
 
 // コンストラクタ
@@ -38,6 +40,7 @@ Hero::Hero(const Hero& other) {
     _hp = other._hp;
     _attack = other._attack;
     _diffence = other._diffence;
+    _pName[_nameSize] = NULL;
 
     copy(other._pName, other._pName + _nameSize, _pName);
 }
@@ -64,10 +67,12 @@ void Enemy::operator = (const Enemy& other) {
     delete[] _pName;
     _pName = __pName;
     _nameSize = other._nameSize;
-    copy(other._pName, other._pName + _nameSize, _pName);
     _hp = other._hp;
     _attack = other._attack;
     _diffence = other._diffence;
+    _pName[_nameSize] = NULL;
+
+    copy(other._pName, other._pName + _nameSize, _pName);
 }
 
 // コンストラクタ
@@ -90,6 +95,7 @@ Enemy::Enemy(const Enemy& other) {
     _hp = other._hp;
     _attack = other._attack;
     _diffence = other._diffence;
+    _pName[_nameSize] = NULL;
 
     copy(other._pName, other._pName + _nameSize, _pName);
 }

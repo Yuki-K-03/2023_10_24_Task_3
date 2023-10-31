@@ -7,7 +7,7 @@ const int MAX_NAME = 16;
 void showStatus(Hero hero, Enemy enemy) {
     printf("\nステータス表示\n");
     printf("Hero\n");
-    //printf("名前：%s\n", );
+    printf("名前：%s\n", hero.getName());
     printf("体力：%d\n", hero.getHp());
     printf("攻撃力：%d, ", hero.getAttack());
     printf("防御力：%d\n", hero.getDiffence());
@@ -15,7 +15,7 @@ void showStatus(Hero hero, Enemy enemy) {
 
     printf("\nステータス表示\n");
     printf("Enemy\n");
-    //printf("名前：%s\n", );
+    printf("名前：%s\n", enemy.getName());
     printf("体力：%d\n", enemy.getHp());
     printf("攻撃力：%d, ", enemy.getAttack());
     printf("防御力：%d\n", enemy.getDiffence());
